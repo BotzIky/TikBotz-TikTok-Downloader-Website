@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary_large_image"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"/>
-  <meta name="monetag" content="92d2bb72a7848f6c1ae04187acfdb659">
+  <meta name="monetag" content="4d00f8bd718e23d3c4ec6f575d6bc482">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Segoe UI',sans-serif;background:#000;color:#f1fdf1;line-height:1.6;min-height:100vh}
@@ -438,7 +438,7 @@
               imgItem.innerHTML = `
                 <img src="${imgUrl}" alt="Image ${index + 1}"/>
                 <div class="image-overlay">
-                  <button class="btn btn-small" onclick="downloadFile('${imgUrl}', 'tiktok-image-${index + 1}. jpg')">
+                  <button class="btn btn-small" onclick="downloadFile('${imgUrl}', 'tiktok-image-${index + 1}.jpg')">
                     <i class="bi bi-download"></i>
                   </button>
                 </div>
@@ -452,11 +452,11 @@
             coverImage.src = data.detail.cover || '';
             
             imageGallerySection.style.display = 'none';
-            videoDownloads. style.display = 'block';
+            videoDownloads.style.display = 'block';
           }
 
           if (data.downloadUrls.video) {
-            btnVideoHD.onclick = () => downloadFile(data. downloadUrls.video, 'tiktok-hd. mp4');
+            btnVideoHD.onclick = () => downloadFile(data.downloadUrls.video, 'tiktok-hd.mp4');
           }
           if (data.downloadUrls.video_standard) {
             btnVideoStd.onclick = () => downloadFile(data.downloadUrls.video_standard, 'tiktok-standard.mp4');
@@ -465,7 +465,7 @@
             btnVideoWM.onclick = () => downloadFile(data.downloadUrls.video_wm, 'tiktok-watermark.mp4');
           }
           if (data.downloadUrls.music) {
-            btnAudio. onclick = () => downloadFile(data.downloadUrls.music, 'tiktok-audio.mp3');
+            btnAudio.onclick = () => downloadFile(data.downloadUrls.music, 'tiktok-audio.mp3');
           }
 
           inputCard.style.display = 'none';
