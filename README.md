@@ -271,9 +271,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- [BotzApi](https://host.optikl.ink) for providing the TikTok download API
+- [Paxsenix0](https://github.com/Paxsenix0) for providing the TikTok download API
 - [Bootstrap Icons](https://icons.getbootstrap.com/) for beautiful icons
 - [SweetAlert2](https://sweetalert2.github.io/) for elegant alerts
+- 
 - All contributors and users of this project
 
 ## ⭐ Star History
