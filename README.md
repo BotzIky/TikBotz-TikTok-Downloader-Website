@@ -260,11 +260,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**BotzAku**
-- Website: [https://host.optikl.ink](https://host.optikl.ink)
+**BotzAku (Riski Yanda)**
+- Website: [https://botzaku.eu.org](https://host.optikl.ink)
 - Instagram: [@botzaku](https://instagram.com/botzaku)
 - TikTok: [@botzaku](https://tiktok.com/@botzaku)
-- Twitter: [@botz_aku](https://twitter. com/botz_aku)
+- Twitter: [@botz_aku](https://twitter.com/botz_aku)
 - Telegram: [BotzAku](https://t.me/BotzAku)
 - WhatsApp: [Channel](https://whatsapp.com/channel/0029VbBjxQl8qIzmg51J5W3x)
 - Discord: [Server](https://discord.gg/Ehr7DrsU)
