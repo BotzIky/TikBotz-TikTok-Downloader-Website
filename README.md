@@ -2,6 +2,8 @@
 
 A fast, responsive, and easy-to-use TikTok downloader web application that allows you to download TikTok videos without watermark, images, and audio in high quality.
 
+---
+
 ## 🌟 Features
 
 - **Download Videos Without Watermark** - Get TikTok videos in HD and standard quality without watermark
@@ -13,8 +15,12 @@ A fast, responsive, and easy-to-use TikTok downloader web application that allow
 - **Dark Theme UI** - Beautiful dark mode interface with smooth animations
 - **No Registration Required** - Completely free to use without any signup
 
+---
+
 ## 🚀 Demo
 Visit the live demo: [TikTok Downloader](https://tiktok.botzaku.eu.org)
+
+---
 
 ## 📸 Screenshots
 ![Screenshot](https://cdn.botzaku.eu.org/119dj5yes1-Zu4-Jg7yeBe8Q0-GM334PC)
@@ -29,6 +35,8 @@ Visit the live demo: [TikTok Downloader](https://tiktok.botzaku.eu.org)
 - Touch-friendly buttons
 - Hamburger menu navigation
 
+---
+
 ## 🛠️ Technologies Used
 
 - **HTML5** - Semantic markup
@@ -37,6 +45,8 @@ Visit the live demo: [TikTok Downloader](https://tiktok.botzaku.eu.org)
 - **Bootstrap Icons** - Icon library
 - **SweetAlert2** - Beautiful alert notifications
 - **BotzApi** - Backend API for TikTok content fetching
+
+---
 
 ## 📋 API Integration
 
@@ -110,6 +120,8 @@ GET https://host.optikl.ink/download/tiktok?url={TIKTOK_URL}
 }
 ```
 
+---
+
 ## 🎯 How to Use
 
 1. **Copy TikTok URL**
@@ -129,6 +141,8 @@ GET https://host.optikl.ink/download/tiktok?url={TIKTOK_URL}
 4. **Download Complete**
    - Files will be automatically downloaded to your device
    - Use "Download Another" button to download more content
+
+---
 
 ## 💻 Installation
 
@@ -178,6 +192,8 @@ vercel
 2. Or connect your GitHub repository
 3. Deploy automatically
 
+---
+
 ## 🔧 Configuration
 
 ### Change API Endpoint
@@ -206,6 +222,8 @@ Edit the CSS variables:
 --text-color: #f1fdf1;
 ```
 
+---
+
 ## 📱 Browser Support
 
 - ✅ Chrome (latest)
@@ -215,6 +233,8 @@ Edit the CSS variables:
 - ✅ Opera (latest)
 - ✅ Mobile browsers (iOS Safari, Chrome Mobile, Samsung Internet)
 
+---
+
 ## ⚠️ Legal Disclaimer
 
 This tool is provided for **personal use only**. Please ensure you have the rights to download and use any content.  Respect copyright laws and TikTok's terms of service.  
@@ -222,6 +242,8 @@ This tool is provided for **personal use only**. Please ensure you have the righ
 - Do not use downloaded content for commercial purposes without permission
 - Always credit the original creator
 - Respect intellectual property rights
+
+---
 
 ## 🤝 Contributing
 
@@ -233,6 +255,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+---
+
 ## 🐛 Bug Reports
 
 If you find any bugs, please create an issue on GitHub with:
@@ -242,9 +266,13 @@ If you find any bugs, please create an issue on GitHub with:
 - Screenshots (if applicable)
 - Browser and OS information
 
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+
+---
 
 ## 👨‍💻 Author
 
@@ -257,12 +285,22 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - WhatsApp: [Channel](https://whatsapp.com/channel/0029VbBjxQl8qIzmg51J5W3x)
 - Discord: [Server](https://discord.gg/Ehr7DrsU)
 
+---
+
 ## 🙏 Acknowledgments
 
 - [Paxsenix0](https://github.com/Paxsenix0) for providing the TikTok download API
 - [Bootstrap Icons](https://icons.getbootstrap.com/) for beautiful icons
 - [SweetAlert2](https://sweetalert2.github.io/) for elegant alerts
 - All contributors and users of this project
+
+---
+
+## ❗ Important
+For anyone who wants to use my repositories Web [Instagram Downloader](https://github.com/BotzIky/BotzIG-Instagram-Downloader-Website), [TikTok Downloader](https://github.com/BotzIky/TikBotz-TikTok-Downloader-Website), and [YouTube Downloader](https://github.com/BotzIky/BotzYT-YouTube-Downloader-Website), please remove the last four <script> tags at the bottom of index.html if you want to disable the ads.
+![Important](https://cdn.botzaku.eu.org/1aRAMFfMXrnQ9vnNhkRtaJvO8utVJR56v)
+
+---
 
 ## ⭐ Star History
 
