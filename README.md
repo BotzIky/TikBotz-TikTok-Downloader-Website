@@ -234,17 +234,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 TODO
-
-- [ ] Add batch download feature
-- [ ] Add history of downloaded videos
-- [ ] Add QR code scanner for TikTok URLs
-- [ ] Add video preview before download
-- [ ] Add download progress indicator
-- [ ] Add support for multiple languages
-- [ ] Add dark/light theme toggle
-- [ ] Add PWA support for offline use
-
 ## 🐛 Bug Reports
 
 If you find any bugs, please create an issue on GitHub with:
@@ -261,7 +250,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **BotzAku (Riski Yanda)**
-- Website: [https://botzaku.eu.org](https://host.optikl.ink)
+- Website: <https://botzaku.eu.org>
 - Instagram: [@botzaku](https://instagram.com/botzaku)
 - TikTok: [@botzaku](https://tiktok.com/@botzaku)
 - Twitter: [@botz_aku](https://twitter.com/botz_aku)
