@@ -14,7 +14,6 @@ A fast, responsive, and easy-to-use TikTok downloader web application that allow
 - **No Registration Required** - Completely free to use without any signup
 
 ## 🚀 Demo
-
 Visit the live demo: [TikTok Downloader](https://tiktok.botzaku.eu.org)
 
 ## 📸 Screenshots
@@ -263,7 +262,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Paxsenix0](https://github.com/Paxsenix0) for providing the TikTok download API
 - [Bootstrap Icons](https://icons.getbootstrap.com/) for beautiful icons
 - [SweetAlert2](https://sweetalert2.github.io/) for elegant alerts
-- 
 - All contributors and users of this project
 
 ## ⭐ Star History
