@@ -10,7 +10,7 @@
   <link rel="icon" href="https://cdn.botzaku.eu.org/1mCRzUgdnJUl1YyLzLIqmMpy9pYMuIjpT"/>
   <link rel="apple-touch-icon" href="https://cdn.botzaku.eu.org/1mCRzUgdnJUl1YyLzLIqmMpy9pYMuIjpT"/>
   <meta property="og:title" content="TikTok Downloader - Download TikTok Video & Images Without Watermark"/>
-  <meta property="og:description" content="Download TikTok videos and images without watermark quickly and securely via BotzApi. "/>
+  <meta property="og:description" content="Download TikTok videos and images without watermark quickly and securely via BotzApi."/>
   <meta property="og:image" content="https://cdn.botzaku.eu.org/1mCRzUgdnJUl1YyLzLIqmMpy9pYMuIjpT"/>
   <meta property="og:type" content="website"/>
   <meta name="twitter:card" content="summary_large_image"/>
@@ -76,8 +76,8 @@
     .image-item img{width:100%;height:100%;object-fit:cover;transition:.3s}
     .image-item:hover img{transform:scale(1.05)}
     .image-overlay{position:absolute;bottom:0;left:0;right:0;padding:.5rem;background:linear-gradient(to top,rgba(0,0,0,.8),transparent);display:flex;justify-content:center;opacity:0;transition:.3s}
-    .image-item:hover.image-overlay{opacity:1}
-    .btn-small{padding:.4rem.75rem;font-size:.8rem}
+    .image-item:hover .image-overlay{opacity:1}
+    .btn-small{padding:.4rem .75rem;font-size:.8rem}
     .btn-secondary{background:#444;color:#fff}
     .btn-secondary:hover{background:#555}
     .actions{margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center}
@@ -107,7 +107,7 @@
       .image-gallery{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
       .stats-row{font-size:.8rem}
     }
-    .swal2-popup{background:rgba(0,0,0,.95)!important;color:#f1fdf1!important;border:1px solid rgba(255,255,255,.1)! important}
+    .swal2-popup{background:rgba(0,0,0,.95)!important;color:#f1fdf1!important;border:1px solid rgba(255,255,255,.1)!important}
     .swal2-title{color:#98ff98!important}
     .swal2-confirm{background:#3cb371!important}
     .swal2-cancel{background:#666!important}
@@ -165,7 +165,7 @@
       <div class="card" id="inputCard">
         <div style="text-align:center;margin-bottom:1rem;">
           <strong style="color:#98ff98">How it works</strong>
-          <div class="info">Paste a TikTok link and click Download.  Get videos without watermark, images, and audio in high quality.</div>
+          <div class="info">Paste a TikTok link and click Download. Get videos without watermark, images, and audio in high quality.</div>
         </div>
 
         <div class="input-row" style="margin-top:0.5rem;">
@@ -256,13 +256,13 @@
         <p>A: Yes! If the TikTok post contains images, all images will be displayed in a gallery with individual download buttons.</p>
 
         <strong>Q: Is this free to use?</strong>
-        <p>A: Yes! The web interface uses the BotzApi, which is always free. </p>
+        <p>A: Yes! The web interface uses the BotzApi, which is always free.</p>
 
         <strong>Q: What about audio?</strong>
         <p>A: You can extract and download the audio (MP3) from any TikTok video.</p>
 
-        <strong>Q: Legal considerations? </strong>
-        <p>A: Ensure you have rights to download or use any content.  This tool is provided for personal use and convenience; respect copyright and terms of service.</p>
+        <strong>Q: Legal considerations?</strong>
+        <p>A: Ensure you have rights to download or use any content. This tool is provided for personal use and convenience; respect copyright and terms of service.</p>
       </div>
     </div>
   </main>
@@ -270,7 +270,7 @@
   <div id="loadingOverlay" class="loading-overlay">
     <div class="loading-spinner"></div>
     <div class="loading-text">
-      <div style="font-weight:bold;margin-bottom:. 5rem;">Processing your request...</div>
+      <div style="font-weight:bold;margin-bottom:.5rem;">Processing your request...</div>
       <div style="font-size:.9rem;opacity:.8;">Fetching TikTok content</div>
     </div>
   </div>
@@ -314,9 +314,13 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
 
     const ttUrl = document.getElementById('ttUrl');
     const fetchBtn = document.getElementById('fetchBtn');
@@ -349,7 +353,7 @@
     let currentData = null;
 
     function showLoading(show = true) {
-      loadingOverlay.style.display = show ?  'flex' : 'none';
+      loadingOverlay.style.display = show ? 'flex' : 'none';
     }
 
     function formatNumber(num) {
@@ -357,6 +361,15 @@
       if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
       if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
       return num.toString();
+    }
+
+    function makeSafeTitle(rawTitle, fallback) {
+      const base = (rawTitle || fallback || 'TikTok')
+        .toString()
+        .trim()
+        .replace(/\s+/g, ' ')
+        .slice(0, 60);
+      return base.replace(/[^\w\d\- ]+/g, '').replace(/\s+/g, '_') || 'TikTok';
     }
 
     function resetUI() {
@@ -367,6 +380,7 @@
       videoDownloads.style.display = 'none';
       imageGallery.innerHTML = '';
       currentData = null;
+      document.title = 'TikTok Downloader - Download TikTok Video & Images Without Watermark';
     }
 
     async function downloadFile(url, filename) {
@@ -375,7 +389,7 @@
         const response = await fetch(url);
         const blob = await response.blob();
         const blobUrl = window.URL.createObjectURL(blob);
-        const a = document. createElement('a');
+        const a = document.createElement('a');
         a.href = blobUrl;
         a.download = filename;
         document.body.appendChild(a);
@@ -383,13 +397,31 @@
         document.body.removeChild(a);
         window.URL.revokeObjectURL(blobUrl);
         showLoading(false);
-        Swal.fire({ title: 'Downloaded!', text: 'File downloaded successfully', icon: 'success', toast: true, position: 'top', showConfirmButton: false, timer: 2000 });
+        Swal.fire({
+          title: 'Downloaded!',
+          text: 'File downloaded successfully',
+          icon: 'success',
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 2000
+        });
       } catch (err) {
         showLoading(false);
-        Swal.fire({ title: 'Download Failed', text: 'Could not download file.  Try opening the link directly. ', icon: 'error', toast: true, position: 'top', showConfirmButton: false, timer: 3000 });
+        Swal.fire({
+          title: 'Download Failed',
+          text: 'Could not download file. Try opening the link directly.',
+          icon: 'error',
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 3000
+        });
         window.open(url, '_blank');
       }
     }
+
+    window.downloadFile = downloadFile;
 
     resetBtn.addEventListener('click', () => {
       ttUrl.value = '';
@@ -399,7 +431,15 @@
     fetchBtn.addEventListener('click', async () => {
       const url = ttUrl.value.trim();
       if (!url) {
-        Swal.fire({ title: 'Missing URL', text: 'Please paste a TikTok URL', icon: 'warning', toast: true, position: 'top', showConfirmButton: false, timer: 2000 });
+        Swal.fire({
+          title: 'Missing URL',
+          text: 'Please paste a TikTok URL',
+          icon: 'warning',
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 2000
+        });
         return;
       }
 
@@ -411,76 +451,108 @@
           throw new Error('API returned HTTP ' + res.status);
         }
         const data = await res.json();
-        const title = data.detail.description || "No Title";
 
         if (data && data.ok && data.detail && data.downloadUrls) {
           currentData = data;
-          
-          authorAvatar.src = data.detail.authorProfile || '';
-          authorName.textContent = data.detail.author || 'Unknown';
-          authorUsername.textContent = '@' + (data.detail.authorUsername || '');
-          viewCount.textContent = formatNumber(data.detail.view);
-          likeCount.textContent = formatNumber(data.detail.like);
-          commentCount.textContent = formatNumber(data.detail.comment);
-          shareCount.textContent = formatNumber(data.detail.share);
 
-          typeBadge.textContent = (data.detail.type || 'video').toUpperCase();
-          description.textContent = data.detail.description || 'No description';
+          const detail = data.detail;
+          const safeTitle = makeSafeTitle(detail.description, 'TikBotz');
 
-          if (data.detail.type === 'image' && data.downloadUrls.images && data.downloadUrls.images.length > 0) {
-            coverSection.style.display = 'block';
-            coverImage.src = data.detail.cover || '';
+          document.title = `${safeTitle} - TikTok Downloader | TikBotz`;
 
+          authorAvatar.src = detail.authorProfile || '';
+          authorName.textContent = detail.author || 'Unknown';
+          authorUsername.textContent = '@' + (detail.authorUsername || '');
+          viewCount.textContent = formatNumber(detail.view);
+          likeCount.textContent = formatNumber(detail.like);
+          commentCount.textContent = formatNumber(detail.comment);
+          shareCount.textContent = formatNumber(detail.share);
+
+          typeBadge.textContent = (detail.type || 'video').toUpperCase();
+          description.textContent = detail.description || 'No description';
+
+          coverSection.style.display = 'block';
+          coverImage.src = detail.cover || '';
+
+          imageGallerySection.style.display = 'none';
+          imageGallery.innerHTML = '';
+          videoDownloads.style.display = 'none';
+
+          if (detail.type === 'image' && Array.isArray(data.downloadUrls.images) && data.downloadUrls.images.length > 0) {
             imageGallerySection.style.display = 'block';
-            imageGallery.innerHTML = '';
+
             data.downloadUrls.images.forEach((imgUrl, index) => {
               const imgItem = document.createElement('div');
               imgItem.className = 'image-item';
               imgItem.innerHTML = `
                 <img src="${imgUrl}" alt="Image ${index + 1}"/>
                 <div class="image-overlay">
-                  <button class="btn btn-small" onclick="downloadFile('${imgUrl}', 'tiktok-image-${index + 1}.jpg')">
+                  <button class="btn btn-small" onclick="downloadFile('${imgUrl}', '${safeTitle || 'TikTok'}-image-${index + 1}.jpg')">
                     <i class="bi bi-download"></i>
                   </button>
                 </div>
               `;
               imageGallery.appendChild(imgItem);
             });
-
-            videoDownloads.style.display = 'none';
           } else {
-            coverSection.style.display = 'block';
-            coverImage.src = data.detail.cover || '';
-            
-            imageGallerySection.style.display = 'none';
             videoDownloads.style.display = 'block';
           }
 
           if (data.downloadUrls.video) {
-            btnVideoHD.onclick = () => downloadFile(data.downloadUrls.video, `HD-TikBotz.mp4`);
+            btnVideoHD.onclick = () =>
+              downloadFile(data.downloadUrls.video, `${safeTitle || 'TikTok'}-HD.mp4`);
           }
           if (data.downloadUrls.video_standard) {
-            btnVideoStd.onclick = () => downloadFile(data.downloadUrls.video_standard, `Standard-TikBotz.mp4`);
+            btnVideoStd.onclick = () =>
+              downloadFile(data.downloadUrls.video_standard, `${safeTitle || 'TikTok'}-Standard.mp4`);
           }
           if (data.downloadUrls.video_wm) {
-            btnVideoWM.onclick = () => downloadFile(data.downloadUrls.video_wm, `Watermark-TikBotz.mp4`);
+            btnVideoWM.onclick = () =>
+              downloadFile(data.downloadUrls.video_wm, `${safeTitle || 'TikTok'}-Watermark.mp4`);
           }
           if (data.downloadUrls.music) {
-            btnAudio.onclick = () => downloadFile(data.downloadUrls.music, `Audio-TikBotz.mp3`);
+            btnAudio.onclick = () =>
+              downloadFile(data.downloadUrls.music, `${safeTitle || 'TikTok'}-Audio.mp3`);
           }
 
           inputCard.style.display = 'none';
           resultArea.style.display = 'block';
-          
-          setTimeout(() => { resultArea.scrollIntoView({behavior:'smooth', block:'start'}); }, 120);
-          
-          Swal.fire({ title: 'Success!', text: 'TikTok content loaded', icon: 'success', toast: true, position: 'top', showConfirmButton: false, timer: 1500 });
+
+          setTimeout(() => {
+            resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 120);
+
+          Swal.fire({
+            title: 'Success!',
+            text: 'TikTok content loaded',
+            icon: 'success',
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 1500
+          });
         } else {
           const msg = (data && data.message) ? data.message : 'Failed to retrieve TikTok data';
-          Swal.fire({ title: 'Failed', text: msg, icon: 'error', toast: true, position: 'top', showConfirmButton: false, timer: 3000 });
+          Swal.fire({
+            title: 'Failed',
+            text: msg,
+            icon: 'error',
+            toast: true,
+            position: 'top',
+            showConfirmButton: false,
+            timer: 3000
+          });
         }
       } catch (err) {
-        Swal.fire({ title: 'Error', text: err.message, icon: 'error', toast: true, position: 'top', showConfirmButton: false, timer: 4000 });
+        Swal.fire({
+          title: 'Error',
+          text: err.message,
+          icon: 'error',
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 4000
+        });
       } finally {
         showLoading(false);
       }
@@ -491,8 +563,6 @@
         fetchBtn.click();
       }
     });
-
-    window.downloadFile = downloadFile;
 
     resetUI();
   </script>
