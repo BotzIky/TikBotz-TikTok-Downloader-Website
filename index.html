@@ -411,6 +411,7 @@
           throw new Error('API returned HTTP ' + res.status);
         }
         const data = await res.json();
+        const title = data.detail.description || "No Title";
 
         if (data && data.ok && data.detail && data.downloadUrls) {
           currentData = data;
@@ -456,16 +457,16 @@
           }
 
           if (data.downloadUrls.video) {
-            btnVideoHD.onclick = () => downloadFile(data.downloadUrls.video, 'tiktok-hd.mp4');
+            btnVideoHD.onclick = () => downloadFile(data.downloadUrls.video, `${title} HD-TikBotz.mp4`);
           }
           if (data.downloadUrls.video_standard) {
-            btnVideoStd.onclick = () => downloadFile(data.downloadUrls.video_standard, 'tiktok-standard.mp4');
+            btnVideoStd.onclick = () => downloadFile(data.downloadUrls.video_standard, `${title} Standard-TikBotz.mp4`);
           }
           if (data.downloadUrls.video_wm) {
-            btnVideoWM.onclick = () => downloadFile(data.downloadUrls.video_wm, 'tiktok-watermark.mp4');
+            btnVideoWM.onclick = () => downloadFile(data.downloadUrls.video_wm, `${title} Watermark-TikBotz.mp4`);
           }
           if (data.downloadUrls.music) {
-            btnAudio.onclick = () => downloadFile(data.downloadUrls.music, 'tiktok-audio.mp3');
+            btnAudio.onclick = () => downloadFile(data.downloadUrls.music, `${title} Audio-TikBotz.mp3`);
           }
 
           inputCard.style.display = 'none';
@@ -495,5 +496,9 @@
 
     resetUI();
   </script>
+  <script>(function(s){s.dataset.zone='10289790',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  <script>(function(s){s.dataset.zone='10289791',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  <script>(function(s){s.dataset.zone='10289792',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  <script src="https://3nbf4.com/act/files/tag.min.js?z=10289759" data-cfasync="false" async></script>
 </body>
 </html>
